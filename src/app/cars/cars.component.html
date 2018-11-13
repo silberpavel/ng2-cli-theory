@@ -1,7 +1,21 @@
 
-  <!-- (data binding) not active button можно сделать с disabled-->
-  <button [disabled]="!canAddCar" class="btn btn-primary">Add new car</button>
-  <hr>
-  <app-car></app-car>
-  <app-car></app-car>
+<!-- (data binding) not active button можно сделать с disabled-->
+<!-- Управление аттрибутами через компонент-->
+<!--<button [disabled]="!canAddCar" class="btn btn-primary">Add new car</button> -->
 
+<!-- с помощью ( ) это говорит о том что мы должны передавать что то из шаблона в компонент  -->
+<button [disabled]="!canAddCar" class="btn btn-primary" (click)="addCar()">Add new car</button>
+<b>{{ addCarsStatus }}</b>
+<hr>
+<app-car></app-car>
+<app-car></app-car>
+
+<hr>
+
+<!--<input type="text" class="form-control" (input)="onKeyUp($event)">-->
+<!--Способ номер №2   Специальная рефиренция #myInp -->
+<!--<input type="text" class="form-control" #myInp (input)="onKeyUp(myInp.value)">  -->
+
+<!--Способ номер №3 -->
+<input type="text" class="form-control" (input)="onKeyUp($event)">
+<p>{{ inputText }}</p>
