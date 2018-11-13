@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   //              ===== SELECTORS ===== 
@@ -9,11 +9,14 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './cars.component.html',
   styleUrls: ['./cars.component.css']
 })
-export class CarsComponent implements OnInit {
+export class CarsComponent {
 
-  constructor() { }
+  canAddCar = false;
 
-  ngOnInit() {
+  constructor() {
+    setTimeout( () => {
+      this.canAddCar = true;
+    },2000);
   }
 
 }

@@ -18,4 +18,8 @@ export class CarComponent {
   carName = 'Jeep';
   carYear:number = 2021;
 
+  getName () {
+    return this.carName;
+  }
+
 }
