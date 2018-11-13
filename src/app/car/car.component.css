@@ -1,0 +1,10 @@
+h2 {
+    color: brown;
+}
+p {
+    color: green;
+}
+.car {
+    border: 1px solid rgb(107, 98, 98);
+    background: rgb(140, 236, 140);
+}
