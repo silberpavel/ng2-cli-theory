@@ -16,26 +16,33 @@ import { FormsModule } from '@angular/forms';  //<<<< import it here
   styleUrls: ['./cars.component.css']
 })
 export class CarsComponent {
-  
   carName = '';
-  addCarStatus =false;
-  cars = ['Ford', 'Audi', 'BMW', 'Mazda', "Lada", 'Bently'];
-  dates = [
-    new Date( 2015, 7, 27).toDateString(),
-    new Date( 2011, 2, 2).toDateString(),
-    new Date( 2012, 11, 25).toDateString(),
-    new Date( 2014, 5, 27).toDateString(),
-  ];
-  
+  carYear = 2017;
+
+  cars: [(name: string, year: number)] = [{
+    name: 'Ford',
+    year: 2015
+  }, {
+    name: 'Mazda',
+    year: 2010
+  }, {
+    name: 'Audi',
+    year: 2017
+  }];
+
 
   constructor() {
 
   }
 
+
   addCar() {
-    this.addCarStatus = true;
-    this.cars.push(this.carName);
-    this.carName ='';
+    this.cars.push({
+      name: this.carName,
+      year: this.carYear
+    });
+    this.carName = '';
+    this.carYear = 2017;
   }
 
 
