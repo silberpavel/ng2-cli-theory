@@ -9,11 +9,16 @@
 </ng-template>
 
 <hr>
-<app-car *ngFor="let car of cars"></app-car>
+<!-- <app-car *ngFor="let car of cars"></app-car> -->
 
 <ul>
-    <li *ngFor="let item of items; let idx = index">
-        <b>INDEX:{{ idx + 1 }}  ID:{{ item.id }}</b> - <i>{{ item.name }}</i>
+    <li *ngFor="let car of cars; let idx = index">
+        <!-- backgroundColor === background-color -->
+       <div [ngStyle]="{backgroundColor: (idx + 1) % 2 === 0 ? 'orange' : 'lightgreen', color: 'blue'}"
+       [ngClass]="{'big-text': setBigCarText(car)}"
+       >
+        <b>{{ idx + 1}}</b>{{ car }}
+    </div> 
     </li>
 </ul>
 
