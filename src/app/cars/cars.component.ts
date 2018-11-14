@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
-import { CommandExecutor } from 'selenium-webdriver/safari';
+// import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';  //<<<< import it here
+// import { AppComponent } from './app.component';
+
 
 @Component({
   //              ===== SELECTORS ===== 
@@ -14,6 +19,8 @@ export class CarsComponent {
 
   canAddCar = false;
   inputText = '';
+  inputText2 = '';
+
 
   constructor() {
     setTimeout( () => {
@@ -26,6 +33,8 @@ export class CarsComponent {
     this.addCarsStatus = "Car added!"
   }
   
+  // Передаем из шаблона в компонент
+
   // onKeyUp(event:Event) {
   //   this.inputText = (<HTMLInputElement>event.target).value;
   // }
@@ -35,17 +44,19 @@ export class CarsComponent {
   //     this.inputText = event;
   // }
 
-// <!--Способ номер №2    Еще добавили отображение после нажатия Enter -- >   
+// <!--Способ номер №3    Еще добавили отображение после нажатия Enter -- >   
+  // onKeyUp(event) {
+  //   if (event.code === 'Enter') {
+  //     // console.log(event);
+  //     this.inputText = event.target.value;
+  //   }
+  // }
+
+  // <!--Способ номер №4    Еще добавили отображение после нажатия Enter -- >   
   onKeyUp(event) {
-    // console.log(event);
-    this.inputText = event;
-    if (event.code === 'g') {
-      console.log(event);
-      
       this.inputText = event.target.value;
     }
-  }
-
+  
 
 
 
