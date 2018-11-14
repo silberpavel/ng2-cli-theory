@@ -12,13 +12,13 @@
 <!-- <app-car *ngFor="let car of cars"></app-car> -->
 
 <ul>
-    <li *ngFor="let car of cars; let idx = index">
-        <!-- backgroundColor === background-color -->
-       <div [ngStyle]="{backgroundColor: (idx + 1) % 2 === 0 ? 'orange' : 'lightgreen', color: 'blue'}"
-       [ngClass]="{'big-text': setBigCarText(car)}"
-       >
-        <b>{{ idx + 1}}</b>{{ car }}
-    </div> 
+    <li *ngFor="let date of dates; let idx = index">
+       <div>
+           <!-- <!-- {{ date | date }} -->
+           <!-- {{ date | date:'medium' }}      'short'   -->
+           <!-- {{ date | uppercase }}  in component must add new Date( 2015, 7, 27).toDateString(), -->
+            <b>{{ idx + 1 }}. </b>{{ date | date }}
+        </div> 
     </li>
 </ul>
 
