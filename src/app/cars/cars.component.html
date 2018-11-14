@@ -1,12 +1,19 @@
 
 <input type="text" class="form-control" [(ngModel)]="carName">
 <button class="btn btn-primary" (click)="addCar()">Add new car</button>
+
+<!-- * говорит о том что это структурная деректива-->
 <p *ngIf="!addCarStatus; else successStatus">Car was NOT added!</p>
 <ng-template #successStatus>
     <p>Car was added successfully!</p>
 </ng-template>
+
 <hr>
-<app-car></app-car>
+<app-car *ngFor="let car of cars"></app-car>
 
-
+<ul>
+    <li *ngFor="let item of items; let idx = index">
+        <b>INDEX:{{ idx + 1 }}  ID:{{ item.id }}</b> - <i>{{ item.name }}</i>
+    </li>
+</ul>
 

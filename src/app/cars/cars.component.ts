@@ -19,20 +19,18 @@ export class CarsComponent {
   
   carName = '';
   addCarStatus =false;
+  cars = ['Ford', 'Audi', 'BMW'];
+  items = [{id: 30, name: 'item 1'},{id: 40, name: 'item 2'},{id: 50, name: 'item 3'}];
 
   constructor() {
 
   }
 
-
   addCar() {
     this.addCarStatus = true;
+    this.cars.push(this.carName);
+    this.carName ='';
   }
-
-
-
-
-
 
 
 
