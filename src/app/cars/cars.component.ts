@@ -1,25 +1,16 @@
 import { Component } from '@angular/core';
-// import { FormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';  //<<<< import it here
-// import { AppComponent } from './app.component';
-
 
 @Component({
-  //              ===== SELECTORS ===== 
-  // selector: 'app-cars',      // throught HTML TAG
-  // selector: '[app-cars]',    // throught ATTRIBUTE
-  selector: '.app-cars',        // trought CLASS
-
+  selector: 'app-cars',
   templateUrl: './cars.component.html',
   styleUrls: ['./cars.component.css']
 })
 export class CarsComponent {
+
   carName = '';
   carYear = 2017;
 
-  cars: [(name: string, year: number)] = [{
+  cars: [{name: string, year: number}] = [{
     name: 'Ford',
     year: 2015
   }, {
@@ -30,11 +21,8 @@ export class CarsComponent {
     year: 2017
   }];
 
-
   constructor() {
-
   }
-
 
   addCar() {
     this.cars.push({
@@ -44,7 +32,5 @@ export class CarsComponent {
     this.carName = '';
     this.carYear = 2017;
   }
-
-
 
 }

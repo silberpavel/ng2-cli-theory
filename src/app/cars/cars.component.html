@@ -1,24 +1,7 @@
-
 <input type="text" class="form-control" [(ngModel)]="carName">
-<button class="btn btn-primary" (click)="addCar()">Add new car</button>
-
-<!-- * говорит о том что это структурная деректива-->
-<p *ngIf="!addCarStatus; else successStatus">Car was NOT added!</p>
-<ng-template #successStatus>
-    <p>Car was added successfully!</p>
-</ng-template>
+<input type="text" class="form-control" [(ngModel)]="carYear">
+<button class="btn btn-primary" (click)="addCar()" >Добавить машину</button>
 
 <hr>
-<!-- <app-car *ngFor="let car of cars"></app-car> -->
 
-<ul>
-    <li *ngFor="let date of dates; let idx = index">
-       <div>
-           <!-- <!-- {{ date | date }} -->
-           <!-- {{ date | date:'medium' }}      'short'   -->
-           <!-- {{ date | uppercase }}  in component must add new Date( 2015, 7, 27).toDateString(), -->
-            <b>{{ idx + 1 }}. </b>{{ date | date }}
-        </div> 
-    </li>
-</ul>
-
+<app-car *ngFor="let car of cars"></app-car>
