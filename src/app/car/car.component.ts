@@ -6,5 +6,10 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./car.component.css']
 })
 export class CarComponent {
-  @Input() carItem:{name:string, year:number};
+  @Input('carItem') car:{name:string, year:number};
+
+    private carItem = false;
+
+    // Существуют Alias, когда хотим поменять название...
 }
+  
