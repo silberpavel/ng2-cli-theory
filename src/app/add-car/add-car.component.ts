@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+// import { EventEmitter } from 'protractor';
 
 @Component({
   selector: 'app-add-car',
@@ -9,6 +10,7 @@ export class AddCarComponent implements OnInit {
 
   carName = '';
   carYear = 2017;
+  @Output('onAddCar') carEmitter = new EventEmitter<{ name: string, year: number }>(); 
 
   constructor() { }
 
@@ -17,6 +19,13 @@ export class AddCarComponent implements OnInit {
 
   
   addCar() {
+
+      // todo : action
+    this.carEmitter.emit({
+      name: this.carName,
+      year: this.carYear
+    });
+
     this.carName = '';
     this.carYear = 2017;
   }
