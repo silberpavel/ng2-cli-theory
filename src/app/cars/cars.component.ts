@@ -1,9 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-cars',
   templateUrl: './cars.component.html',
-  styleUrls: ['./cars.component.css']
+  styleUrls: ['./cars.component.css'],
+  // None - to make global style for all in component
+  encapsulation: ViewEncapsulation.None   // Native - shadow-root...
 })
 export class CarsComponent {
 
