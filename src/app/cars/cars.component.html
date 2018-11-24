@@ -2,5 +2,8 @@
 <app-add-car (onAddCar)="updateCarList($event)"></app-add-car>
 <!-- <button (click)="onClick()"></button> -->
 <hr>
-<!-- [ carItem Название свойства из компонента] из car.component.ts -->
-<app-car *ngFor="let car of cars"[carItem]="car"></app-car>
+
+<div class="list-group">
+<app-car class="list=group-item" *ngFor="let car of cars"[carItem]="car"></app-car>
+</div>
+
