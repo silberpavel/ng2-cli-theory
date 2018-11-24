@@ -5,7 +5,7 @@
 
 <div class="list-group">
     <app-car class="list=group-item" *ngFor="let c of cars"[carItem]="car">
-        <h4 class="list-group-item-haeding">Название: {{ c.name }}</h4>        
+        <h4 #carHeading class="list-group-item-heading">Название: {{ c.name }}</h4>        
         <p class="list-group-item-text">Год: {{ c.year }}</p>
     </app-car>
 </div>
