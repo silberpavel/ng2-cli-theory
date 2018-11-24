@@ -1,5 +1,11 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-// import { EventEmitter } from 'protractor';
+import { 
+  Component, 
+  OnInit, 
+  EventEmitter, 
+  Output, 
+  ViewChild, 
+  ElementRef 
+} from '@angular/core';
 
 @Component({
   selector: 'app-add-car',
@@ -9,9 +15,10 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 export class AddCarComponent implements OnInit {
 
   // carName = '';
-  carYear = 2017;
+  // carYear = 2017;
   @Output('onAddCar') carEmitter = new EventEmitter<{ name: string, year: number }>(); 
-
+  @ViewChild('carYearInput') carYearInput: ElementRef;
+  
   constructor() { }
 
   ngOnInit() {
@@ -21,15 +28,17 @@ export class AddCarComponent implements OnInit {
   addCar(carNameEl: HTMLInputElement) {
 
     // console.log(carNameEl.value);
-    
+    // console.log(this.carYearInput.nativeElement.value);    
+
       // todo : action
     this.carEmitter.emit({
       name: carNameEl.value,
-      year: this.carYear
+      year: +this.carYearInput.nativeElement.value
     });
 
     carNameEl.value = '';
-    this.carYear = 2017;
+    this.carYearInput.nativeElement.value = 2018;
+    // this.carYear = 2017;
   }
 
 
