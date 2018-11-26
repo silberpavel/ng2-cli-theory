@@ -4,7 +4,21 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   template: `
     <div class="col-xs-8 col-xs-offset-2">
-      
+
+      <h2>{{ name }}</h2>
+      <h2>{{ name | lowercase }}</h2>
+      <h2>{{ name | uppercase }}</h2>
+      <h2>{{ name | slice:0:3 }}</h2>
+      <h2>{{ name | slice:3:6 }}</h2>
+      <h2>{{ name | slice:8 }}</h2>
+      <h2>{{ name | slice:8 | uppercase}}</h2>
+
+      <hr>
+
+      <h2>{{ pi }}</h2>
+      <h2>{{ pi | number }}</h2>
+      <h2>{{ pi | number:'2.2-2' }}</h2>
+
     </div>
   `
 })
