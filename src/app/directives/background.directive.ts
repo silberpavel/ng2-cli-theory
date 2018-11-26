@@ -1,10 +1,21 @@
-import { Directive, ElementRef, OnInit, Renderer2, asNativeElements, HostListener, HostBinding } from "@angular/core";
+import { 
+    Directive, 
+    ElementRef, 
+    OnInit, 
+    Renderer2, 
+    asNativeElements, 
+    HostListener, 
+    HostBinding, 
+    Input 
+} from "@angular/core";
 
 @Directive({
     selector: '[appBackground]'
 })
 
 export class BackgroundDirective implements OnInit {
+    @Input('appBackground') hoverColor: string = 'blue';
+    @Input() defaultColor: string = 'transparent';
 
     @HostBinding('style.backgroundColor') background: string;           //  !!!
 
@@ -13,15 +24,16 @@ export class BackgroundDirective implements OnInit {
 
 
     ngOnInit() {
+        this.background = this.defaultColor;
         
     }
 
 
     @HostListener('mouseenter') mouseEnter() {
-        this.background = 'Green';
+        this.background = this.hoverColor;
     }
     @HostListener('mouseleave') mouseLeave() {
-        this.background = 'transparent';
+        this.background = this.defaultColor;
 
 
     }
