@@ -22,19 +22,14 @@ export class BackgroundDirective implements OnInit {
     constructor (private element: ElementRef, private renderer: Renderer2) {
     }
 
-
     ngOnInit() {
         this.background = this.defaultColor;
-        
     }
-
 
     @HostListener('mouseenter') mouseEnter() {
         this.background = this.hoverColor;
     }
     @HostListener('mouseleave') mouseLeave() {
         this.background = this.defaultColor;
-
-
     }
 }
