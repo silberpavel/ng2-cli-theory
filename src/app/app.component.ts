@@ -1,10 +1,26 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',  // located in main html       
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-root',
+  template: `
+    <div class="col-xs-8 col-xs-offset-2">
+      
+    </div>
+  `
 })
 export class AppComponent {
-  title = 'ng2-cli-theory';
+  name = 'WebForMyself';
+  pi = Math.PI;
+  money = 350;
+  date = new Date();
+  amount = 0.45;
+  object = {
+    foo: 'bar',
+    baz: 'qux',
+    nested:
+      {
+        xyz: 3,
+        numbers: [1, 2, 3]
+      }
+  };
 }
