@@ -4,8 +4,9 @@ import { Pipe, PipeTransform } from '@angular/core';
     name: 'appPow'
 })
 export class PowPipe implements PipeTransform {
-    transform(value: any) {
-        return value + ' pipe';
+    transform(value: any, Pownumber: number = 1, symbol: string = '=') {
+        // return value * Pownumber;   Question on Stackoverflow
+        return symbol + Math.pow(value, Pownumber);
     }
 
 }
