@@ -11,7 +11,7 @@ import { of } from "rxjs";
   template: `
     <div class="col-xs-8 col-xs-offset-2">
 
-      <h1>{{ title }}</h1>
+      <h1>{{ asyncTitle | async }}</h1>
 
       <input type="text" class="form-control" [(ngModel)]="searchCar">
       <button class="btn btn-primary" (click)="addCar()">Добавить</button>
@@ -37,11 +37,11 @@ export class AppComponent {
     { name: 'BMW', descr: 'WFM 6'},
   ];
 
-  title ='';
+  // title =''; // to display
   // RXJS - выучить...
   asyncTitle = of('Async title 3 seconds')
   .pipe(delay(3000))
-  .subscribe((str) => this.title = str);
+  // .subscribe((str) => this.title = str);
 
   addCar() {
     this.cars.push({
