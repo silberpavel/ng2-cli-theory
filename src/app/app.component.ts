@@ -15,7 +15,7 @@ export class AppComponent {
       isSold: true
     },
     {
-      name: 'Mercedes',
+      name: 'Mercedes-Benz',
       isSold: false
     }
   ];
