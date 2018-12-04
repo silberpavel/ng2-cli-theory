@@ -1,34 +1,8 @@
-# SERVICES(06)-how-to-create-service
+# SERVICES(06)-Communication components through the service
+
+## Создаем сервис который отвечает за хранение данных
+## Это основное придназначение сервисов в Angular 2
 
 ```ts
-import { Component, Input } from '@angular/core';
-import { ConsoleService } from '../console.service';
 
-@Component({
-  selector: 'app-car',
-  templateUrl: './car.component.html',
-  styleUrls: ['./car.component.css'],
-  providers: [ConsoleService]
-})
-export class CarComponent {
-
-  @Input() car;
-
-  constructor(private consoleService: ConsoleService) {}
-
-  getClass() {
-    return {
-      'list-group-item-success': !this.car.isSold,
-      'list-group-item-danger': this.car.isSold,
-      'list-group-item': true
-    }
-  }
-
-  onAction(type: string) {
-    this.car.isSold = type === 'buy' ? true : false;
-
-    const service = new ConsoleService();
-    this.consoleService.log(`${this.car.name} status = ${type}`);   
-  }
-}
 ```
