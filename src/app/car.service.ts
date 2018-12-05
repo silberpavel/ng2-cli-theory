@@ -13,4 +13,14 @@ export class CarsService {
             isSold: false
         },
     ];
+
+
+    addCar (name: string) {
+        this.cars.push({
+            isSold: false, name
+        });
+    }
+
+
+
 }
