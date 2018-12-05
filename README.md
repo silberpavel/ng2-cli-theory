@@ -4,20 +4,7 @@
 ## Это основное придназначение сервисов в Angular 2
 # main mission to save some data and move it to components
 ```ts
-export class CarsService {
-    cars = [
-        {
-            name: 'Ford',
-            isSold: false
-        },
-        {
-            name: 'Mazda',
-            isSold: true
-        },
-        {
-            name: 'Mercedes-Benz',
-            isSold: false
-        },
-    ];
-}
+
 ```
+
+*** Если хотим сделать глобальный сервис тогда помещяем в app.module.ts в providers
