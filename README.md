@@ -6,8 +6,8 @@
       <input 
       type="password" 
       class="form-control"
-      ngModel 
-      name="pass"
+      ngModel                   // MARKERS
+      name="pass"               // MARKERS
       >
 ```
 2. Нужно указать условия по которой нужно делать валидацию. (обязательное поле или нет)
