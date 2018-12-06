@@ -1,10 +1,9 @@
-# SERVICES(06)-Communication components through the service
+# SERVICES(06)-Use of service in the other service
 
 ## Создаем сервис который отвечает за хранение данных
 ## Это основное придназначение сервисов в Angular 2
 # main mission to save some data and move it to components
-```ts
 
-```
+*** В этой часте пример как импортировать сервис внутрь другова сервиса.***
 
-*** Если хотим сделать глобальный сервис тогда помещяем в app.module.ts в providers
+** Для того что-бы в сервисе ижектить какие то другие сущности нужно добавить (@Injectable)**

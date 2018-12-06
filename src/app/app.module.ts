@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { CarComponent } from './car/car.component';
 import { CarAddComponent } from './car-add/car-add.component';
+import { ConsoleService } from './console.service';
 
 
 @NgModule({
@@ -19,7 +20,7 @@ import { CarAddComponent } from './car-add/car-add.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [ConsoleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
