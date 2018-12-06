@@ -1,10 +1,16 @@
 import { Component } from '@angular/core';
 
+
 @Component({
-  selector: 'app-root',  // located in main html       
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-root',
+  templateUrl: './app.component.html'
 })
 export class AppComponent {
-  title = 'ng2-cli-theory';
+  answers = [{
+    type: 'yes',
+    text: 'Да'
+  }, {
+    type: 'no',
+    text: 'Нет'
+  }];
 }
