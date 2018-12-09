@@ -28,6 +28,7 @@
       class="form-control"
       ngModel 
       name="country"
+      required
       >
         <option value="ru">Россия</option>
         <option value="by">Белоруссия</option>
@@ -41,6 +42,7 @@
           [value]="ans.type"
           ngModel 
           name="answer"
+          required
           > {{ans.text}}
       </label>
     </div>

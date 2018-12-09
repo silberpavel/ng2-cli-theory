@@ -44,7 +44,7 @@
 ### ng-invalid =>  Означает что данный инпут сейчас не валидный
 ### ng-pristine =>  Означает что данный инпут сейчас пустой
 
-# Validation
+# Validation (with highlight)
 ```ts
 @Component({
   selector: 'app-root',
