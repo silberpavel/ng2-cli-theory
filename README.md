@@ -1,6 +1,6 @@
 ## TD Создание формы
 1. Создаем маркеры на инпуты для того чтобы Ангуляр знал что ему выцеплять.
-*app.component.html*
+**app.component.html**
 ```html
     <div class="form-group">
       <label>Пароль</label>
@@ -12,14 +12,14 @@
       >
 ```
 
-1.1 Добавляем специальный медот onSubmit (и передаем тот метод который будеи выполнятся)
-*app.component.html*
+1.1 Добавляем специальный медот ngSubmit (и передаем тот метод который будет выполнятся)
+**app.component.html**
 ```html
   <form (ngSubmit)="submitForm()">
 ```
 
 1.2 Создаем даный метод в компоненте
-*app.component.ts*
+**app.component.ts**
 ```ts
   export class AppComponent {
     submitForm() {
