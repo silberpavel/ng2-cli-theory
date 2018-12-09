@@ -1,6 +1,6 @@
 <div class="col-xs-8 col-xs-offset-2">
-  <form>
-
+<!-- Добавляем специальный медот onSubmit (и передаем тот метод который будеи выполнятся) -->
+  <form (ngSubmit)="submitForm(form)" #form>  
     <div class="form-group">
       <label>Email</label>
       <input 

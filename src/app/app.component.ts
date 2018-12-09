@@ -13,4 +13,8 @@ export class AppComponent {
     type: 'no',
     text: 'Нет'
   }];
+
+  submitForm(form: HTMLFormElement) {     // HTMLFormElement => TS type
+    console.log("submited!", form);
+  }
 }
