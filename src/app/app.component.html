@@ -1,7 +1,6 @@
 <div class="col-xs-8 col-xs-offset-2">
-<!-- Добавляем специальный медот onSubmit (и передаем тот метод который будеи выполнятся) -->
+
   <form (ngSubmit)="submitForm(form)" #form="ngForm">  
-  <!-- <form (ngSubmit)="submitForm()" #form="ngForm">   -->
     <div class="form-group">
       <label>Email</label>
       <input 
@@ -9,7 +8,9 @@
       class="form-control"
       ngModel 
       name="email"
-      >
+      required  
+      email
+      >                 <!-- Directive "required" -->
     </div>
     <div class="form-group">
       <label>Пароль</label>
@@ -18,6 +19,7 @@
       class="form-control"
       ngModel 
       name="pass"
+      required
       >
     </div>
     <div class="form-group">
@@ -42,7 +44,11 @@
           > {{ans.text}}
       </label>
     </div>
-    <button class="btn btn-success" type="submit">Сохранить</button>
+    <button 
+      class="btn btn-success" 
+      type="submit"
+      [disabled]="!form.valid"
+    >Сохранить</button>
 
   </form>
 </div>

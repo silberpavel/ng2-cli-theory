@@ -1,45 +1,67 @@
-## TD Создание формы
-1. Создаем маркеры на инпуты для того чтобы Ангуляр знал что ему выцеплять.
-**app.component.html**
+## TD Валидация формы. Часть 1
+
+### Нужно указать условия по которой нужно делать валидацию. (обязательное поле или нет)
+### Если поля с дерективой required не были заполнены, тодна valid: false иначе true
 ```html
     <div class="form-group">
-      <label>Пароль</label>
+      <label>Email</label>
       <input 
-      type="password" 
+      type="text" 
       class="form-control"
-      ngModel                   // MARKERS
-      name="pass"               // MARKERS
-      >
-```
-
-1.1 Добавляем специальный медот ngSubmit (и передаем тот метод который будет выполнятся)
-**app.component.html**
-```html
-  <form (ngSubmit)="submitForm(form)" #form>
-```
-
-1.2 Создаем даный метод в компоненте
-**app.component.ts**
-```ts
-  export class AppComponent {
-    submitForm(form: HTMLFormElement) {     // HTMLFormElement => TS type
-      console.log("submited!", form);
-    }
-  }
-```
-* При нажатии на Submit должны получить элемент этой формы!
-```html
-<form novalidate="" class="ng-untouched ng-pristine ng-valid">  
-    <div class="form-group">
-      <div>...</div>
+      ngModel 
+      name="email"
+      required      
+      >                 <!-- Directive "required" -->
     </div>
-    <button class="btn btn-success" type="submit">Сохранить</button>
-
-  </form>
 ```
-* Получаем данные через объект
+
+### Можно заблокировать кнопку Сохранить (submit) если поле не были заполнены. 
+```html
+    <button 
+      class="btn btn-success" 
+      type="submit"
+      [disabled]="!form.valid"
+    >Сохранить</button>
+```
+
+### Email validation
+```html
+    <div class="form-group">
+      <label>Email</label>
+      <input 
+      type="text" 
+      class="form-control"
+      ngModel 
+      name="email"
+      required  
+      email
+      >               
+    </div>
+```
+### Можно показывать пользователю какие поля у нас введенны не правильно
+#### С помощью классов которые добавляет Ангуляр (в инпуты)
+### ng-untouched => Означает что данный инпут еще не трогали
+### ng-invalid =>  Означает что данный инпут сейчас не валидный
+### ng-pristine =>  Означает что данный инпут сейчас пустой
+
+# Validation
+```ts
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styles: [`
+    input.ng-invalid.ng-touched {           // Два класса ng-invalid ng-touched
+      border: 1px solid red;
+      }
+    `]
+})
+```
 
 
-2. Нужно указать условия по которой нужно делать валидацию. (обязательное поле или нет)
-3. Нужно обработать кнопку "Сохранить" (submit)
-4. Посмотреть те данные которые мы ввели.
+
+
+
+
+
+
+
