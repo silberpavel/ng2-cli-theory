@@ -20,7 +20,6 @@
       <p *ngIf="email.invalid && email.touched">נא הקלידו כתובת דואר אלקטרוני נכונה</p>         
     </div>
 ```
-3. Удаляем stylus from @Component (app.component.html)
 
 
 
