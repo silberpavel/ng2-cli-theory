@@ -1,16 +1,11 @@
-import { Component, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { removeDebugNodeFromIndex } from '@angular/core/src/debug/debug_node';
-import { REACTIVE_DRIVEN_DIRECTIVES } from '@angular/forms/src/directives';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html'
 })
-export class AppComponent {
-
-  @ViewChild('form') form: NgForm;
-
+export class AppComponent implements OnInit {
   answers = [{
     type: 'yes',
     text: 'Да'
@@ -19,36 +14,18 @@ export class AppComponent {
     text: 'Нет'
   }];
 
-  // Defaults
-  defaultAnswer = 'no';
-  defaultCountry = 'by';
+  form: FormGroup;
 
-  // Как забирать данные формы после submit
-  formData = {};
-  isSubmited = false;
-
-  submitForm(form: NgForm) {  
-    this.isSubmited = true; 
-    // console.log("submited!", form);
-    this.formData = this.form.value; // Можем добавить в formData все свойства form
-    this.form.reset();  // CLEAN all inputs field!
-  }
-
-  addRandEmail() {
-    const randEmail = 'wtf@gmail.com';
-    // this.form.setValue({
-    //   user: {
-    //     pass: '',
-    //     email: randEmail
-    //   },
-    //   country: '',
-    //   answer: ''
-    // });
-
-    this.form.form.patchValue({       // patchValue не стерает поля в форме
-      user: {email: randEmail}
+  ngOnInit() {
+    this.form = new FormGroup({
+      email: new FormControl(''),
+      pass: new FormControl(''),
+      country: new FormControl('ru'),
+      answer: new FormControl('no')
     });
   }
 
-
+  onSubmit() {
+    console.log('Submited!', this.form);
+  }
 }
