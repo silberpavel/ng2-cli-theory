@@ -1,29 +1,21 @@
-## TD Валидация формы. Часть 2
+## TD Значения по умолчанию
 
-### Highlight of error validation (red text)
-1. Удаляем stylus from @Component (app.component.ts)
-
-2. Adding специальный класс [ngClass] 
-*(app.component.html)*
+### Default values
 ```html
-    <div class="form-group" [ngClass]="{'has-error': email.invalid && email.touched}">
-      <label>Email</label>
-      <input 
-      type="text" 
+    <div class="form-group">
+      <label>Выберите страну</label>
+      <select 
       class="form-control"
-      ngModel 
-      name="email"
-      required  
-      email
-      #email="ngModel"   
-      >        
-      <p *ngIf="email.invalid && email.touched">נא הקלידו כתובת דואר אלקטרוני נכונה</p>         
+      [ngModel]="defaultCountry"        <!- Default values -->
+      name="country"
+      required
+      >
+        <option value="ru">Россия</option>
+        <option value="by">Белоруссия</option>
+        <option value="ua">Украина</option>
+      </select>
     </div>
 ```
-
-
-
-
 
 
 
