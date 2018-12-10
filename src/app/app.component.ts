@@ -5,12 +5,7 @@ import { REACTIVE_DRIVEN_DIRECTIVES } from '@angular/forms/src/directives';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styles: [`
-    input.ng-invalid.ng-touched {
-      border: 1px solid red;
-      }
-    `]
+  templateUrl: './app.component.html'
 })
 export class AppComponent {
 
