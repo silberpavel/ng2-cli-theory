@@ -16,6 +16,7 @@
         #email="ngModel"   
         >        
         <p *ngIf="email.invalid && email.touched">נא הקלידו כתובת דואר אלקטרוני שגויה</p>
+        <button type="button" class="btn btn-primary" (click)="addRandEmail()">Добавить случайный email</button>
       </div>
 
       <div class="form-group" [ngClass]="{'has-error': pass.invalid && pass.touched}">
@@ -67,4 +68,12 @@
     >Сохранить</button>
 
   </form>
+
+  <!-- if form submited = true -->
+  <div *ngIf="isSubmited">
+    <pre>
+      {{ formData | json }}       <!-- using pipe here -->
+    </pre>
+  </div>
+
 </div>

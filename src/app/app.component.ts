@@ -9,6 +9,7 @@ import { REACTIVE_DRIVEN_DIRECTIVES } from '@angular/forms/src/directives';
 })
 export class AppComponent {
 
+  @ViewChild('form') form: NgForm;
 
   answers = [{
     type: 'yes',
@@ -22,7 +23,32 @@ export class AppComponent {
   defaultAnswer = 'no';
   defaultCountry = 'by';
 
-  submitForm(form: NgForm) {   
-    console.log("submited!", form);
+  // Как забирать данные формы после submit
+  formData = {};
+  isSubmited = false;
+
+  submitForm(form: NgForm) {  
+    this.isSubmited = true; 
+    // console.log("submited!", form);
+    this.formData = this.form.value; // Можем добавить в formData все свойства form
+    this.form.reset();  // CLEAN all inputs field!
   }
+
+  addRandEmail() {
+    const randEmail = 'wtf@gmail.com';
+    // this.form.setValue({
+    //   user: {
+    //     pass: '',
+    //     email: randEmail
+    //   },
+    //   country: '',
+    //   answer: ''
+    // });
+
+    this.form.form.patchValue({       // patchValue не стерает поля в форме
+      user: {email: randEmail}
+    });
+  }
+
+
 }

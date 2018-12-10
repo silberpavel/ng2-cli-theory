@@ -1,8 +1,10 @@
-## TD Группировка форм в один объект (это удобно)
+## TD Динамическое изменение формы inside component
+```html
+<button class="btn btn-primary" (click)="addRandEmail()">Добавить случайный email</button>
+```
 
-#### ngModelGroup="user"   mean that it contain many controls которые попадут в данную групу
+### Inside component
+* Adding
+```ts   @ViewChild('form') form: NgForm; ```
 
-### По сути это создает дополнительный отдельный объект в свойстве value (формы)
-
-
-
+### Как забирать данные формы после submit
