@@ -11,4 +11,4 @@
     });
   }
 ```
-![R Группировка форм](https://imgur.com/a/M379tlz)
+![R Группировка форм]([img]https://i.imgur.com/mV4mYSM.png[/img])
