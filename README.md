@@ -11,4 +11,4 @@
     });
   }
 ```
-![screenshot of sample](src\assets\images\R_formGroup.png)
+![R Группировка форм](https://imgur.com/a/M379tlz)
