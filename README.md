@@ -14,12 +14,16 @@
     [disabled]="form.invalid"
     >Сохранить</button>
 ```
-### If field is not valid and out of focus, it will be add p below field
+### If field is not valid and out of focus, it will be add p (text) below field
 ```html
 <p *ngIf="form.get('pass').invalid && form.get('pass').touched">Password can not be empty!</p>
 ```
 
-### Filed highlight (red) if not valid after focus out
+### Field highlight (red) if not valid after focus out [Bootstrap class -> 'has-error']
 ```html
-
+<div class="form-group" [ngClass]="{'has-error': form.get('pass').invalid && form.get('pass').touched}">
+    <label>Пароль</label>
+    <input type="password" class="form-control" formControlName="pass">
+    <p *ngIf="form.get('pass').invalid && form.get('pass').touched">Password can not be empty!</p>
+</div>
 ```
