@@ -13,7 +13,7 @@
         <input type="password" class="form-control" formControlName="pass">
         <p *ngIf="form.get('user.pass').invalid && form.get('user.pass').touched">
           <span *ngIf="form.get('user.pass').errors['required']">Password can not be empty!</span>
-          <span *ngIf="form.get('user.pass').errors['lengthError']">Password can not be short then 4 characters!</span>
+          <span *ngIf="form.get('user.pass').errors['lengthError']">Password can not be short then {{ charsCount }} characters!</span>
         </p>
       </div>
     </div>
