@@ -11,4 +11,4 @@
     });
   }
 ```
-![screenshot of sample]('src\assets\images\R_formGroup.png')
+![screenshot of sample](src\assets\images\R_formGroup.png)
