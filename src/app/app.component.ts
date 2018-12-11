@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
     this.form = new FormGroup({
       user: new FormGroup({
         email: new FormControl('', [Validators.required, Validators.email]),
-        pass: new FormControl('', Validators.required),
+        pass: new FormControl('', [Validators.required, this.checkForLength]),
       }),
       country: new FormControl('ru'),
       answer: new FormControl('no')
@@ -30,4 +30,15 @@ export class AppComponent implements OnInit {
   onSubmit() {
     console.log('Submited!', this.form);
   }
+
+  // must return nothing or object
+  checkForLength(control:FormControl) {
+    if(control.value.length <= 4) {
+      return {
+        'lengthError': true
+      };
+    }
+    return null
+  }
+
 }
