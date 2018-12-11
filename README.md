@@ -11,4 +11,4 @@
     });
   }
 ```
-![R Группировка форм](https://ibb.co/g7c2WVj)
+![R Группировка форм](https://serving.photos.photobox.com/51104816408e37e8abd21a7d9002782eff44cc173ec0e12e42f5ae7ee3678f2d76b719dd.jpg)
