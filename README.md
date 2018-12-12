@@ -1,5 +1,33 @@
 # Блок 8. Теория. HTTP
-## Настройка сервера
+## Получение данных. Метод GET
 
-Получаем с сервера json или json строку с помощью ajax.
-Тем самым не перезагружая html 
+Mock data = подражающее данные
+
+### HttpModule Must be connected (in component)
+```ts
+import { HttpModule } from '@angular/http';
+
+@NgModule({
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpModule
+  ]
+})
+```
+
+### Создаем сервис и работаем через него
+```ts
+
+```
+
+
+
+
+
+
+
+
+
+
+
