@@ -1,5 +1,6 @@
-# R Создание валидатора
+# R Создание асинхронного валидатора
 
-Password can not be empty!
+## Проверка Email, if it exists in database.
 
-Password can not be short then
+
+![EMAIL IN DATABASE](https://serving.photos.photobox.com/67658876db668f981807043224fbc73e7faa9b7faeba33734257ff2938e494c5cdeb65f2.jpg)
