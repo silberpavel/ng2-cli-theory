@@ -7,6 +7,6 @@ export class CarsService {
     constructor(private http: Http) {}
 
     getCars() {
-      this.http.get();  
+      return this.http.get('http://localhost:3000/cars');  // return obseriable object (наблюдаемый объект)
     }
-}
+} 
