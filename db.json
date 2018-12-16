@@ -2,53 +2,13 @@
   "cars": [
     {
       "name": "Ford",
-      "color": "magenta",
+      "color": "red",
       "id": 1
     },
     {
       "name": "Audi",
-      "color": "blue",
+      "color": "grey",
       "id": 2
-    },
-    {
-      "name": "Ferrari",
-      "color": "blue",
-      "id": 3
-    },
-    {
-      "name": "BMW",
-      "color": "blue",
-      "id": 4
-    },
-    {
-      "name": "VW",
-      "color": "blue",
-      "id": 5
-    },
-    {
-      "name": "Lada",
-      "color": "blue",
-      "id": 6
-    },
-    {
-      "name": "Хлеб",
-      "color": "blue",
-      "id": 7
-    },
-    {
-      "name": "",
-      "color": "blue",
-      "id": 8
-    },
-    {
-      "name": "WW",
-      "color": "blue",
-      "id": 9
-    },
-    {
-      "name": "ghgh",
-      "color": "blue",
-      "id": 10
     }
   ]
 }

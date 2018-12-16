@@ -18,7 +18,8 @@ export class AppComponent {
     'blue',
     'pink',
     'grey',
-    'silver'
+    'silver',
+    'green'
   ];
   cars: Cars[] = [];
   carName: string = '';
@@ -54,8 +55,8 @@ export class AppComponent {
     return this.colors[num];
   }
 
-  setNewColor(id: number) {
-    this.carsService.changeColor(id, this.getRandColor())
+  setNewColor(car: Cars) {
+    this.carsService.changeColor(car, this.getRandColor())
       .subscribe((data) => {
         console.log(data);
       });
