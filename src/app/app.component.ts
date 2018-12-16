@@ -62,4 +62,12 @@ export class AppComponent {
       });
   }
 
+  deleteCar(car: Cars) {
+    this.carsService.deleteCar(car)
+    .subscribe((data) => {
+      this.cars = this.cars.filter(c => c.id !== car.id)  // Dynamic delete 
+      console.log(data);
+    });
+  }
+
 }
