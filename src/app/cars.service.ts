@@ -12,7 +12,7 @@ export class CarsService {
       const headers = new Headers({
         'Content-type': 'application/json; carset=utf8'
       });
-      return this.http.get('http://localhost:3010/cars', { // return obseriable object (наблюдаемый объект)
+      return this.http.get('http://localhost:3000/cars', { // return obseriable object (наблюдаемый объект)
         headers: headers
         })
       .map((response: Response) =>  response.json())
