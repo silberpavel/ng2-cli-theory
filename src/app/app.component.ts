@@ -29,16 +29,14 @@ export class AppComponent {
   loadCars() {
     this.carsService
     .getCars()
-
-    // .subscribe((response: Response) => {    
-    //   const data =response.json();
-    //   this.cars = data;
-    // });
-
-    // Better option below
-    .subscribe((cars: Cars[]) => {
+    .subscribe(
+      (cars: Cars[]) => {
       this.cars = cars;
-    });
+    },
+      (error) => {
+        alert(error);
+      }
+    );
   }
 
   addCar() {

@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Http, Response, Headers } from "@angular/http";
 import { headersToString } from "selenium-webdriver/http";
+import { Observable} from 'rxjs/Observable';
 
 
 @Injectable()
@@ -11,9 +12,13 @@ export class CarsService {
       const headers = new Headers({
         'Content-type': 'application/json; carset=utf8'
       });
-      return this.http.get('http://localhost:3000/cars',  // return obseriable object (наблюдаемый объект)
-        {headers: headers})
-      .map((response: Response) =>  response.json());  
+      return this.http.get('http://localhost:3010/cars', { // return obseriable object (наблюдаемый объект)
+        headers: headers
+        })
+      .map((response: Response) =>  response.json())
+      .catch((error: Response) => {
+        return Observable.throw('Сервер не доступен!');
+      })
     }
 //====================================================================================
     addCar(carName: string) {
