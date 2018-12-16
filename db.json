@@ -19,6 +19,16 @@
       "name": "Jeep",
       "color": "green",
       "id": 6
+    },
+    {
+      "name": "Nissan",
+      "color": "blue",
+      "id": 7
+    },
+    {
+      "name": "BMW",
+      "color": "blue",
+      "id": 8
     }
   ]
 }
