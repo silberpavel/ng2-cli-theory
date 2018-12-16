@@ -1,29 +1,33 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-
-import { MyComponent } from './my/my.component';
-import { My2Component } from './my2/my2.component';
-import { CarsComponent } from './cars/cars.component';
-import { CarComponent } from './car/car.component'
 import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
-@NgModule({ 
-  declarations: [   // declaration of componenets
+import { AppComponent } from './app.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { CarsPageComponent } from './cars-page/cars-page.component';
+import { CarsService } from './cars.service';
+import { Routes, RouterModule } from '@angular/router';
+
+const appRoutes: Routes = [
+  // localhost:4200/cars
+  { path: 'cars', component: CarsPageComponent },
+  { path: '', component: HomePageComponent }
+];
+
+@NgModule({
+  declarations: [
     AppComponent,
-    MyComponent,
-    My2Component,
-    CarsComponent,
-    CarComponent
+    HomePageComponent,
+    CarsPageComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    HttpModule,
+    RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
-  bootstrap: [AppComponent]       // to start...
+  providers: [CarsService],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
