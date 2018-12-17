@@ -1,11 +1,7 @@
-# Параметры адресной строки. Часть 1
-
-## creating new component
+# Параметры адресной строки. Часть 2
+* Example
 ```
-cd src
-ng g c car-page --spec=false
+localhost:4200/cars/1/Ford?year=2017&color=red#pic
 ```
-### car-page.component.ts
-* Нужно заинжектить ActiveRoute для получения его данных  
 
 
