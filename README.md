@@ -1,21 +1,9 @@
-# Программная навигация
-## Using TypeScript
+# Параметры адресной строки. Часть 1
 
-
-### Relative route (Относительный переход)
-```ts
-import { Router, ActivatedRoute } from '@angular/router';
-
-export class HomePageComponent implements OnInit {
-
-  constructor(private router: Router, private route: ActivatedRoute) { }
-
-  ngOnInit() {
-  }
-
-  openCarsPage() {
-    this.router.navigate(['/cars'], {relativeTo: this.route});
-  }
-
-}
+## creating new component
+```dos
+cd src
+ng g c car-page --spec=false
 ```
+
+
