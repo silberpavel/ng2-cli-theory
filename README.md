@@ -1,22 +1,21 @@
-# Навигация между страницами
+# Программная навигация
+## Using TypeScript
 
-### Делаем навигацию без перезагрузки
 
-```html
-      <ul class="nav navbar-nav">
-        <li 
-          routerLinkActive="active"
-          [routerLinkActiveOptions]="{exact: true}"
-        >
-        <a routerLink="/">Главная</a>
-        </li>
-        <li 
-          routerLinkActive="active"
-        >
-        <a [routerLink]="'/cars'">Машины</a>
-      </li>
-      </ul>
+### Relative route (Относительный переход)
+```ts
+import { Router, ActivatedRoute } from '@angular/router';
+
+export class HomePageComponent implements OnInit {
+
+  constructor(private router: Router, private route: ActivatedRoute) { }
+
+  ngOnInit() {
+  }
+
+  openCarsPage() {
+    this.router.navigate(['/cars'], {relativeTo: this.route});
+  }
+
+}
 ```
-
-<!-- routerLinkActiveOptions -->
-<!-- helps to remove active class (in navbar) for main page -->
