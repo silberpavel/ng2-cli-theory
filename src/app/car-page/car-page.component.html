@@ -1,4 +1,9 @@
-<h2>Car {{ id }} detail information</h2>
-<h3>{{ name }}</h3>
+<h3>№ машины {{ id }}</h3>
+<h3>Марка машины {{ name }}</h3>
+<h3>Цвет машины {{ color }}</h3>
+<h3>Год машины {{ year }}</h3>
+<p>{{ hash }}</p>
+<hr>
 
-<h4><a [routerLink]="['/cars', 8, 'Mazda']">Open Mazda</a></h4>
+<!-- <h4><a [routerLink]="['/cars', 8, 'Mazda']">Open Mazda</a></h4> -->
+<h4><a (click)="openMazdaPage()">Open Mazda page</a></h4>
