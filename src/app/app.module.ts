@@ -1,29 +1,34 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+
+import { AppComponent } from './app.component';
+import { HomePageComponent } from './home-page/home-page.component';
+
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { HeaderComponent } from './header/header.component';
+import { CarsModule} from './cars-page/cars.module'
+import { SharedModule } from './shared/shared.module';
 
-import { MyComponent } from './my/my.component';
-import { My2Component } from './my2/my2.component';
-import { CarsComponent } from './cars/cars.component';
-import { CarComponent } from './car/car.component'
-import { FormsModule } from '@angular/forms';
 
-@NgModule({ 
-  declarations: [   // declaration of componenets
+@NgModule({
+  declarations: [      // The place where we declere pipies, components, directives
     AppComponent,
-    MyComponent,
-    My2Component,
-    CarsComponent,
-    CarComponent
+    HomePageComponent,
+    HeaderComponent
   ],
-  imports: [
+  imports: [          // Модули которые нужны для работы
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    HttpModule,
+    AppRoutingModule,     
+    CarsModule,            // Registration of module
+    SharedModule
+
   ],
-  providers: [],
-  bootstrap: [AppComponent]       // to start...
+  providers: [],     // Where we register our services
+  bootstrap: [AppComponent]     // То что нужно запустить при старте нашего приложения (тобишь корневой компонент)
 })
 export class AppModule { }
