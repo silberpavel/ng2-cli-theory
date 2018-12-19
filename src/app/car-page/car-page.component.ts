@@ -37,8 +37,9 @@ export class CarPageComponent implements OnInit {
       this.year = params['year'];
     });
 
+  }
     openMazdaPage () {
-      this.router.navigate(['./cars', 8, 'Mazda'], {
+      this.router.navigate(['./cars', 8, 'Mazda'], { 
         queryParams: {
           color: 'pink',
           year: 1995
@@ -47,6 +48,5 @@ export class CarPageComponent implements OnInit {
       });
     }
 
-  }
 
 }
