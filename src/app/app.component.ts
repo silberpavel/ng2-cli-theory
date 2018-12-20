@@ -1,10 +1,23 @@
 import { Component } from '@angular/core';
+import { trigger, state, style } from '@angular/animations';
 
 @Component({
-  selector: 'app-root',  // located in main html       
+  selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  animations: [
+    trigger('clickedDiv', [
+      state('start', style({
+        backgroundColor: 'blue',
+        width: '150px',
+        height: '150px'
+      })),
+      state('end', style({
+        backgroundColor: 'red',
+        width: '300px',
+        height: '300px'
+      }))
+    ])
+  ]
 })
 export class AppComponent {
-  title = 'ng2-cli-theory';
 }

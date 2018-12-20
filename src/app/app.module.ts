@@ -1,29 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { MyComponent } from './my/my.component';
-import { My2Component } from './my2/my2.component';
-import { CarsComponent } from './cars/cars.component';
-import { CarComponent } from './car/car.component'
-import { FormsModule } from '@angular/forms';
-
-@NgModule({ 
-  declarations: [   // declaration of componenets
-    AppComponent,
-    MyComponent,
-    My2Component,
-    CarsComponent,
-    CarComponent
+@NgModule({
+  declarations: [
+    AppComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    HttpModule,
+    BrowserAnimationsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]       // to start...
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
