@@ -1,5 +1,11 @@
 import { Component } from '@angular/core';
-import { trigger, state, style } from '@angular/animations';
+import {
+  animate,
+  state,
+  style,
+  transition,
+  trigger
+} from '@angular/animations';
 
 @Component({
   selector: 'app-root',
@@ -15,9 +21,19 @@ import { trigger, state, style } from '@angular/animations';
         backgroundColor: 'red',
         width: '300px',
         height: '300px'
-      }))
+      })),
+      transition('start => end', animate(1500)),
+      transition('end => start', animate('800ms 0.5s ease-out'))
     ])
   ]
 })
 export class AppComponent {
+  clickedDivState = 'start';
+
+  changeDivState() {
+    this.clickedDivState = 'end';
+    setTimeout(() => {
+      this.clickedDivState = 'start';
+    }, 3000);
+  }
 }
