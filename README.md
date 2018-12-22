@@ -1,28 +1,40 @@
-# Ng2CourseTheory
+# Блок 11. Теория. Анимации
+# Создание анимации
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.1.
+1. trigger (это грубо говоря название анимации) and it has name 
+```ts    
+    trigger('clickedDiv', [ 
+```
+2. second parametr it is array, where we decsribe all our animation.
+3. The animation we decsribe by states 
+```ts
+    state('start', style({  
+```
+4. To make transition between states we use 
+```ts
+    transition('start => end', animate(3000)),
+    transition('end => start', animate('3000ms 0.5s ease-out'))
+```
 
-## Development server
+5. Для того что бы анимация применилась, we add name of the trigger ('@clickedDiv') after this, binding to some variable [@clickedDiv]="clickedDivState".
+On click we change our animation
+* app.component.html
+```html
+<div
+  (click)="changeDivState()"
+  [@clickedDiv]="clickedDivState"
+></div>
+```
+* app.component.ts
+```ts
+export class AppComponent {
+  clickedDivState = 'start';
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+  changeDivState() {
+    this.clickedDivState = 'end';
+    setTimeout(() => {
+      this.clickedDivState = 'start';
+    }, 3000);
+  }
+}
+```

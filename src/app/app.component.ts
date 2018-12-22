@@ -19,11 +19,12 @@ import {
       })),
       state('end', style({
         backgroundColor: 'red',
-        width: '300px',
+        width: '50px',
         height: '300px'
       })),
-      transition('start => end', animate(1500)),
-      transition('end => start', animate('800ms 0.5s ease-out'))
+      // третее свойство/состояние trigger (transition - переход)
+      transition('start => end', animate(3000)),
+      transition('end => start', animate('3000ms 0.5s ease-out'))
     ])
   ]
 })
