@@ -6,6 +6,7 @@ import {
   transition,
   trigger
 } from '@angular/animations';
+import { reduce } from 'rxjs/operator/reduce';
 
 @Component({
   selector: 'app-root',
@@ -35,14 +36,23 @@ import {
     ])
   ,
     trigger('multi', [
-      state('start', style({})),
-      state('end', style({})),
+      state('start', style({
+        height: '150px',
+        width: '150px',
+        border: '5px solid black'
+      })),
+      state('end', style({
+        height: '170px',
+        width: '170px',
+        backgroundColor: 'blue'
+      })),
       transition('start <=> end', animate(500))
       ])
     ]
 })
 export class AppComponent {
   clickedDivState = 'start';
+  multiState = 'start';
 
   changeDivState() {
     this.clickedDivState = 'end';
