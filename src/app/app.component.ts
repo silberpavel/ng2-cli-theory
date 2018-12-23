@@ -33,7 +33,13 @@ import {
       transition('start <=> active', animate(800)),
       transition('active => end', animate('3000ms 0.5s ease-out'))
     ])
-  ]
+  ,
+    trigger('multi', [
+      state('start', style({})),
+      state('end', style({})),
+      transition('start <=> end', animate(500))
+      ])
+    ]
 })
 export class AppComponent {
   clickedDivState = 'start';
