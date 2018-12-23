@@ -1,6 +1,4 @@
 # Блок 11. Теория. Анимации
-# Пустое состояние
+# Специальные символы
 
-* Element not exist in DOM
-
-* 'void' use element that not exists in DOM
+ ## "*" Any state

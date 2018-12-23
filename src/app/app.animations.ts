@@ -8,10 +8,9 @@ import {
 
 
   export const divTrigger = trigger('divTrigger', [
-    state('show', style({
-
-    })),
-    transition('void => show', [
+    
+      // void => *
+    transition(':enter', [
         style({
             opacity: 0
         }),
@@ -19,7 +18,19 @@ import {
             opacity: 1
         }))
     ]),
-    transition('show => void', [animate(1500, style({
+    // * => void
+    transition(':leave', [animate(1500, style({
             opacity: 0
     }))])
   ]);
+
+export const changeWidthTrigger = trigger('changeWidth' , [
+  transition('* => *', [
+      animate(1000, style({
+          width: '10px'
+      })),
+      animate(1000, style({
+          width: '*'
+      }))
+  ])  
+])
