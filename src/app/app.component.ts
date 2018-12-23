@@ -22,9 +22,16 @@ import {
         width: '50px',
         height: '300px'
       })),
+      state('active', style({
+        backgroundColor: 'orange',
+        width: '130px',
+        height: '130px'
+      })),
       // третее свойство/состояние trigger (transition - переход)
-      transition('start => end', animate(3000)),
-      transition('end => start', animate('3000ms 0.5s ease-out'))
+      transition('start <=> end', animate('3000ms ease-in')),
+      // transition('end => start', animate('3000ms 0.5s ease-out')),
+      transition('start <=> active', animate(800)),
+      transition('active => end', animate('3000ms 0.5s ease-out'))
     ])
   ]
 })
