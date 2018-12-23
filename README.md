@@ -1,2 +1,6 @@
 # Блок 11. Теория. Анимации
-# Сложный переход
+# Пустое состояние
+
+* Element not exist in DOM
+
+* 'void' use element that not exists in DOM
