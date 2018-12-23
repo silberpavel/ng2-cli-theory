@@ -44,9 +44,24 @@ import { reduce } from 'rxjs/operator/reduce';
       state('end', style({
         height: '170px',
         width: '170px',
-        backgroundColor: 'blue'
+        border: '5px solid black',
+        backgroundColor: 'blue',
+        borderRadius: '50%'
       })),
-      transition('start <=> end', animate(500))
+      transition('start <=> end', [
+        style({
+          backgroundColor: 'red'
+          }),
+          animate(1500, style({
+            backgroundColor: 'yellow'
+          })),
+          animate(1000, style({
+            width: '200px',
+            height: '200px',
+            borderRadius: '50%'
+          })),
+          animate(1000)
+        ])
       ])
     ]
 })
