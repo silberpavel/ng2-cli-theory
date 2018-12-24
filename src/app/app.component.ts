@@ -25,6 +25,8 @@ import {
       // третее свойство/состояние trigger (transition - переход)
       transition('start => end', animate(3000)),
       transition('end => start', animate('3000ms 0.5s ease-out'))
+    ]),
+    trigger('popOverState', [
     ])
   ]
 })
@@ -37,4 +39,22 @@ export class AppComponent {
       this.clickedDivState = 'start';
     }, 3000);
   }
+//======================
+  show = false;
+
+  get stateName() {
+    return this.show ? 'show' : 'hide';
+  }  
+  
+  toggle() {
+    console.log('hover');    
+    this.show = !this.show;
+  }
+
+
+
+
+
+
+
 }

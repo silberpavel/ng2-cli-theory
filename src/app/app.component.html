@@ -1,4 +1,16 @@
-<div
+<!-- <div
   (click)="changeDivState()"
   [@clickedDiv]="clickedDivState"
-></div>
+></div> -->
+
+
+<hr>
+
+
+<div [@popOverState]="stateName">
+
+  <p><img src=".\assets\images\ecab.png" width="300px" alt="Electrical cabinet"></p>
+  <p>Hello! I'm helpful message.</p>
+</div>
+
+<button (click)="toggle()">Toggle PopOver</button>
