@@ -6,11 +6,13 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { PhotoGalleryComponent } from './photo-gallery/photo-gallery.component';
+import { PortfolioComponent } from './portfolio/portfolio.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PhotoGalleryComponent
+    PhotoGalleryComponent,
+    PortfolioComponent
   ],
   imports: [
     BrowserModule,
