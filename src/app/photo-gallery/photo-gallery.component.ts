@@ -34,8 +34,8 @@ export class PhotoGalleryComponent implements OnInit {
 
   constructor() {}
 
-    position: string;
-    photoUrl = "assets\images\ecab.png";
+    position: string = '';
+    photoUrl = "\..\assets\images\ecab.png";
    
    changePosition(newPosition: string) {
      this.position = newPosition;

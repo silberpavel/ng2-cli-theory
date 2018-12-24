@@ -1,8 +1,9 @@
 
-<img [src]="photoUrl" [@photoState]="position" class="photo">
+<img style="display: block" src="\assets\images\sea.jpeg" [@photoState]="position" class="photo" width="300px">
 
-
-<button (click)="changePosition('move')" class="button">Move</button>
-<button (click)="changePosition('spin')" class="button">Spin</button>
-<button (click)="changePosition('enlarge')" class="button">Enlarge</button>
-<button (click)="changePosition('null')" class="button">Reset</button>
+<div style="display: block; margin: 50px">
+    <button (click)="changePosition('move')" class="button">Move</button>
+    <button (click)="changePosition('spin')" class="button">Spin</button>
+    <button (click)="changePosition('enlarge')" class="button">Enlarge</button>
+    <button (click)="changePosition('null')" class="button">Reset</button>
+</div>
