@@ -27,7 +27,7 @@ import {
                 style({backgroundColor: 'green'}),
                 style({backgroundColor: 'red'}),
                 style({backgroundColor: 'magenta'}),
-                style({backgroundColor: 'violet'}),
+                style({backgroundColor: 'green'}),
                 style({backgroundColor: 'yellow'})
             ]))
 
