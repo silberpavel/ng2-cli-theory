@@ -1,7 +1,9 @@
 <button class="btn btn-primary" (click)="isVisible = !isVisible">Switch</button>
 <hr>
 <div 
-  [@divTrigger]="'show'"
+  @divTrigger
+  (@divTrigger.start)="onAnimationStart($event)"
+  (@divTrigger.done)="onAnimationDone($event)"
   class="alert alert-danger"
   *ngIf="isVisible"
 >
