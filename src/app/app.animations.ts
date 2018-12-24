@@ -1,6 +1,8 @@
 import {
     animate,
     state,
+    group,
+    keyframes,
     style,
     transition,
     trigger
@@ -12,12 +14,26 @@ import {
       // void => *
     transition(':enter', [
         style({
-            opacity: 0
+            width: '*',
+            height:'*'
         }),
-        animate(1500, style({
-            opacity: 1
-        }))
-    ]),
+        group([
+            animate(2000, style({
+                width: '200px',
+                height:'200px'
+            })),  
+            animate(6000, keyframes([
+                style({backgroundColor: 'blue'}),
+                style({backgroundColor: 'green'}),
+                style({backgroundColor: 'red'}),
+                style({backgroundColor: 'magenta'}),
+                style({backgroundColor: 'cian'}),
+                style({backgroundColor: 'yellow'})
+            ]))
+
+        ]),
+        animate(1000)
+    ]), 
     // * => void
     transition(':leave', [animate(1500, style({
             opacity: 0
@@ -34,3 +50,4 @@ export const changeWidthTrigger = trigger('changeWidth' , [
       }))
   ])  
 ])
+ 
