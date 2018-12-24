@@ -35,14 +35,11 @@ export class PhotoGalleryComponent implements OnInit {
   constructor() {}
 
     position: string;
-    photoUrl = 'https://images.pexels.com/photos/982263/pexels-photo-982263.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500';
+    photoUrl = "assets\images\ecab.png";
    
    changePosition(newPosition: string) {
      this.position = newPosition;
    }
-
-
-
 
   ngOnInit() {
   }

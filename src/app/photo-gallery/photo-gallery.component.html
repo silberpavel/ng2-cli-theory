@@ -1,8 +1,8 @@
 
-<img [src]="photoUrl" [@photostate]=position class="photo">
+<img [src]="photoUrl" [@photoState]="position" class="photo">
 
 
-<button (click)="changePosition('move')" class="button">Translate</button>
-<button (click)="changePosition('spin')" class="button">Translate</button>
-<button (click)="changePosition('enlarge')" class="button">Translate</button>
-<button (click)="changePosition('null')" class="button">Translate</button>
+<button (click)="changePosition('move')" class="button">Move</button>
+<button (click)="changePosition('spin')" class="button">Spin</button>
+<button (click)="changePosition('enlarge')" class="button">Enlarge</button>
+<button (click)="changePosition('null')" class="button">Reset</button>

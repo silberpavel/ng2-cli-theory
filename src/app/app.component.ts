@@ -61,7 +61,6 @@ export class AppComponent {
   }  
   
   toggle() {
-    console.log('hover');    
     this.show = !this.show;
   }
 
