@@ -26,7 +26,10 @@ import {
       transition('start => end', animate(3000)),
       transition('end => start', animate('3000ms 0.5s ease-out'))
     ]),
+    //
     trigger('popOverState', [
+
+
     ])
   ]
 })
