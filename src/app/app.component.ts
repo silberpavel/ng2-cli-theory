@@ -28,11 +28,22 @@ import {
     ]),
     //
     trigger('popOverState', [
+      state('show', style({
+        opacity: 1,
+        transform: 'scale(0.5)'
 
-
+      })),
+      state('hide', style({
+        opacity: 0,
+        // transform: 'translateX(-100%) scale(1.5) rotateZ(90deg)'
+        transform: 'rotateZ(180deg)'
+      })),
+      transition('show => hide', animate('600ms ease-out')),
+      transition('hide => show', animate('1000ms ease-in'))
     ])
   ]
 })
+
 export class AppComponent {
   clickedDivState = 'start';
 

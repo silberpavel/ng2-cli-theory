@@ -5,10 +5,12 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { PhotoGalleryComponent } from './photo-gallery/photo-gallery.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PhotoGalleryComponent
   ],
   imports: [
     BrowserModule,
